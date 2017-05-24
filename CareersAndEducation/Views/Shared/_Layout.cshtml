@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Careers & Education</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img style="max-width:50px;" class="img-circle" alt="logo" src="/Content/Picture/logo.jpg">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Student <span class="caret"></span>
+                        </a><ul class="dropdown-menu">
+                            <li>Browse Jobs</li>
+                            <li>Higher Studies</li>
+                            <li>Discussion Forum</li>
+                        </ul>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Organization <span class="caret"></span>
+                        </a><ul class="dropdown-menu">
+                            <li>Post Jobs</li>
+                            <li>Edit Jobs</li>
+                            <li>Browse Profiles</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Update Profile    ", "Index", "Home")</li>
+                </ul>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Student", "S_Register", "Account", routeValues: null, htmlAttributes: new { id = "s_registerLink" })</li>
+                    <li>@Html.ActionLink("Organization", "O_Register", "Account", routeValues: null, htmlAttributes: new { id = "o_registerLink" })</li>
+                </ul>
+
+                    <li>@Html.ActionLink("Organization", "Organization", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+        @RenderBody()
+      
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <div id="footer">
+        <div class="container">
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Careers & Education</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
